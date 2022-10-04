@@ -16,9 +16,9 @@ public class Card {
     @Override
     public String toString() {
         if(suit == '\u2661' || suit =='\u2662')
-            return   "\u001B[31m"+rank+ "" +suit+"  " ;
+            return   "\u001B[31m"+rank+ "" +suit+"  " +"\u001B[35m" ;
         else
-            return  "\u001B[34m"+rank+ "" +suit+"  " ;
+            return  "\u001B[34m"+rank+ "" +suit+"  " +"\u001B[35m" ;
     }
 
     public int getRank() {
