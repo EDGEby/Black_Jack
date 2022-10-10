@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 class Player extends Hand{
     @Override
-     public void play(Deck deck){
+     public void play(Deck deck) throws InterruptedException {
         Scanner in = new Scanner(System.in);
         char answer = 'y';
 
@@ -13,6 +13,7 @@ class Player extends Hand{
 
         while(calcScore()<21 && answer =='y'){
             System.out.println("your hand: "+hand+ " your score: "+ calcScore());
+
             System.out.println("Do you want another card? (y/n)");
             answer = in.nextLine().charAt(0);
             if (answer=='y'){
@@ -21,6 +22,8 @@ class Player extends Hand{
 
         }
         System.out.println("your hand: "+hand+ " your score: "+ calcScore());
+
+
     /*    if (calcScore()==21)
             System.out.println("Player wins!");
         else if (calcScore()>21)

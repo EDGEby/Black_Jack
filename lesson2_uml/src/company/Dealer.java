@@ -10,10 +10,13 @@ package company;
 
         while (calcScore() < 17) {
             System.out.println("Dealer hand: " + hand + " Dealer score: " + calcScore());
+
             takeOneCard(deck);
             Thread.sleep(600);
         }
+
         System.out.println("Dealer hand: " + hand + " Dealer score: " + calcScore());
+
     }
 
 }

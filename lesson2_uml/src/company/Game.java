@@ -16,26 +16,27 @@ public class Game   {
     public void play() throws InterruptedException{
 
         Scanner in= new Scanner(System.in);
+       // deck = new Deck();
+      //  player= new Player();
+      //  dealer=new Dealer();
         char answer='y';
         while(answer=='y'){
             deck = new Deck();
-            player= new Player();
-            dealer=new Dealer();
-            player.play(deck);
 
+            player.play(deck);
+            dealer.play(deck);
 
             //проверка как сыграл player
              if (player.calcScore() == 21) {
                  System.out.println("Player wins!");
                  playerWin++;
-                 continue;
+
              } else if (player.calcScore() > 21) {
                  System.out.println("Player loses!");
                  dealerWin++;
-                 continue;
+
              }
 
-             dealer.play(deck);
              //проверка как сыграл dealer
             if (dealer.calcScore() == 21) {
                 System.out.println("Dealer wins!");
@@ -57,6 +58,16 @@ public class Game   {
             System.out.println("PW ="+playerWin + " DW = "+dealerWin + " Draw = " +draws);
             System.out.println("try again?");
             answer = in.nextLine().charAt(0);
+
+
+            while(player.hand.size()!=0){
+            player.removeOneCard(deck);
+            }
+            while(dealer.hand.size()!=0){
+            dealer.removeOneCard(deck);
+            }
+
+
        }
     }
 

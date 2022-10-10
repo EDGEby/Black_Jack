@@ -16,9 +16,10 @@ public abstract class Hand {
             res += hand.get(i).toString();
         }
         return res;
-
-
     }
+
+
+
 
     public int calcScore(){
         int score=0;
@@ -34,6 +35,12 @@ public abstract class Hand {
 
     public void takeOneCard(Deck deck){
         hand.add(deck.sendCard());
+
+    }
+    public Card removeOneCard(Deck deck){
+        Card t = hand.get(hand.size()-1);
+        hand.remove(hand.size()-1);
+        return t;
     }
 
 
