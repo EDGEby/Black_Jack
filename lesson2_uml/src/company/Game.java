@@ -31,14 +31,16 @@ public class Game   {
                  System.out.println("Player wins!");
                  playerWin++;
 
+             }   else if (dealer.calcScore() == player.calcScore()) {
+                 System.out.println("Draw");
+                 draws++;
+
              } else if (player.calcScore() > 21) {
                  System.out.println("Player loses!");
                  dealerWin++;
-
              }
-
              //проверка как сыграл dealer
-            if (dealer.calcScore() == 21) {
+            else if (dealer.calcScore() == 21) {
                 System.out.println("Dealer wins!");
                 dealerWin++;
 
@@ -49,12 +51,9 @@ public class Game   {
                 System.out.println("Player wins!");
                 playerWin++;
             } else if (dealer.calcScore() > player.calcScore()) {
-                System.out.println("Dealer loses!");
-                playerWin++;
-            } else if (dealer.calcScore() == player.calcScore()) {
-                System.out.println("Draw");
-                draws++;
-        }
+                System.out.println("Dealer wins!");
+                dealerWin++;
+            }
             System.out.println("PW ="+playerWin + " DW = "+dealerWin + " Draw = " +draws);
             System.out.println("try again?");
             answer = in.nextLine().charAt(0);
